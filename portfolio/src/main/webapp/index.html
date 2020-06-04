@@ -1,130 +1,47 @@
 <!DOCTYPE html>
-<html>
-  
+<html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  
+
   <body>
     <header id="header" class="alt">
-        <div class="inner">
-            <h1>Jing Ying's Portfolio</h1>
-        </div>
-    </header>
-
-    <header>
-      <nav>
-        <ul>
-        <li><a href="pages/images.html">Gallery</a><li>
-        <li><a href="pages/projects.html">Projects</a><li>
-        <li><a href="pages/talents.html">Talents</a><li>
+      <div class="inner">
+        <h1>Qiu Jing Ying</h1>
+        <p>a practising Machine Learning and Software Engineer</p>
+        <ul class="icons">
+          <li><a href="https://github.com/haveaqiupill" class="icon fa-github large"><span class="label">Github</span></a></li>
+          <li><a href="https://www.instagram.com/haveaqiupill" class="icon fa-instagram large"><span class="label">Instagram</span></a></li>
+          <li><a href="https://www.linkedin.com/in/jingyingqiu" class="icon fa-linkedin large"><span class="label">LinkedIn</span></a></li>
         </ul>
-      </nav>
+      </div>
     </header>
 
-    <!-- Wrapper -->
-			<div id="wrapper">
+    <section id="intro" class="main">
+      <span class="icon fa-star major"></span>
+      <h2>About Me</h2>
+      <p>I am a Year Two Undergraduate Student pursuing a double major in Computer Science and<br />
+        the Innovation Design Programme at the National University of Singapore.<br />
+        This website is a collection of my projects, talents and hobbies!</p>
+      <ul class="actions">
+        <li><a href="pages/images.html" class="button big">Gallery</a><li>
+        <li><a href="pages/projects.html" class="button big">Projects</a><li>
+        <li><a href="pages/talents.html" class="button big">Talents</a><li>
+      </ul>
+    </section>
 
-				<!-- Banner -->
-					<section id="intro" class="main">
-						<span class="icon fa-diamond major"></span>
-						<h2>Introduction</h2>
-                        <p>This is my portfolio.<br />
-                        I am a Year Two Computer Science student from NUS.<br />
-                        Click here to get a random quote:</p>
-                        <!-- <button onclick="addRandomQuote()">Hello</button> -->
-                        <!-- <div id="quote-container"></div> -->
-						<ul class="actions">
-							<li><a href="#" class="button big">Learn More</a></li>
-						</ul>
-					</section>
+    <footer id="footer">
+      <p class="copyright">&copy; Qiu Jing Ying. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+    </footer>
 
-				<!-- Items -->
-					<section class="main items">
-						<article class="item">
-							<header>
-								<a href="#"><img src="images/pic01.jpg" alt="" /></a>
-								<h3>Feugiat et faucibus</h3>
-							</header>
-							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</article>
-						<article class="item">
-							<header>
-								<a href="#"><img src="images/pic02.jpg" alt="" /></a>
-								<h3>Blandit adipiscing</h3>
-							</header>
-							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</article>
-						<article class="item">
-							<header>
-								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
-								<h3>Lorem massa nulla</h3>
-							</header>
-							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</article>
-						<article class="item">
-							<header>
-								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
-								<h3>Ipsum sed tempus</h3>
-							</header>
-							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</article>
-					</section>
+	<script src="css_js/jquery.min.js"></script>
+	<script src="css_js/skel.min.js"></script>
+	<script src="css_js/util.js"></script>
+	<script src="css_js/main.js"></script>
 
-				<!-- CTA -->
-					<section id="cta" class="main special">
-						<h2>Etiam veroeros lorem</h2>
-						<p>Phasellus ac augue ac magna auctor tempus proin<br />
-						accumsan lacus a nibh commodo in pellentesque dui<br />
-						in hac habitasse platea dictumst.</p>
-						<ul class="actions">
-							<li><a href="#" class="button big">Get Started</a></li>
-						</ul>
-					</section>
-
-				<!-- Main -->
-				<!--
-					<section id="main" class="main">
-						<header>
-							<h2>Lorem ipsum dolor</h2>
-						</header>
-						<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare. Etiam eget neque id metus gravida tristique ac quis erat. Aenean quis aliquet sem. Ut ut elementum sem. Suspendisse eleifend ut est non dapibus. Nulla porta, neque quis pretium sagittis, tortor lacus elementum metus, in imperdiet ante lorem vitae ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam eget neque id metus gravida tristique ac quis erat. Aenean quis aliquet sem. Ut ut elementum sem. Suspendisse eleifend ut est non dapibus. Nulla porta, neque quis pretium sagittis, tortor lacus elementum metus, in imperdiet ante lorem vitae ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-					</section>
-				-->
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
-					</footer>
-
-			</div>
   </body>
-
-    <script src="css_js/jquery.min.js"></script>
-    <script src="css_js/skel.min.js"></script>
-    <script src="css_js/util.js"></script>
-    <script src="css_js/main.js"></script>
-
 </html>

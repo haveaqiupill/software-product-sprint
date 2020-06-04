@@ -709,6 +709,16 @@
 			display: none;
 		}
 
+        .icon.large {
+			display: block;
+			margin: 0 0 1.5em 0;
+		}
+            .icon.large:before {
+                    font-size: 3rem;
+                    width: 3em;
+                    height: 3em;
+            }
+
 		.icon.major {
 			display: block;
 			margin: 0 0 1.5em 0;
@@ -1294,7 +1304,7 @@
 		-ms-flex-direction: column;
 		flex-direction: column;
 		padding: 8em 0 6em 0;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("images/banner.jpg");
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
