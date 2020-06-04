@@ -100,7 +100,7 @@ available to your web browser, you need to run a **server** to host the file.
 To run a development server, first navigate to the `portfolio` directory:
 
 ```bash
-cd portfolio
+cd software-product-sprint/portfolio
 ```
 
 Then execute this command:
