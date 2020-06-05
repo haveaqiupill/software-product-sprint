@@ -78,8 +78,13 @@ body {
 }
 .card__content {
   padding: 1.6rem;
-  font-family: 'Sacramento', sans-serif;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
+
+.card__content > h3 {
+  color: #666666;
+}
+
 .card__button {
   margin: 1.6rem 0;
   text-align: center;
