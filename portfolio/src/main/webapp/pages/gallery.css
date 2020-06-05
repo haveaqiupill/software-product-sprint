@@ -78,6 +78,7 @@ body {
 }
 .card__content {
   padding: 1.6rem;
+  font-family: 'Sacramento', sans-serif;
 }
 .card__button {
   margin: 1.6rem 0;
