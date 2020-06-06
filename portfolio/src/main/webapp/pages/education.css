@@ -1,12 +1,6 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: #27222f;
-  color: #666666;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 17pt;
-  font-weight: 200;
-  line-height: 1.6em;
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Sacramento|Source+Sans+Pro:200,300,400");
+html {
+  font-size: 18px;
 }
 
 #intro.main > h2 {

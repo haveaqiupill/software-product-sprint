@@ -1,13 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Sacramento|Source+Sans+Pro:200,300,400");
-html {
-  font-size: 14.5px;
-}
 
 body, input, select, textarea {
   font: "Source Sans Pro";
   font-weight: 200;
   line-height: 1.45em;
-  background-color: #f0f0f0;
+  background-color: black;
   color: #404646;
 }
 

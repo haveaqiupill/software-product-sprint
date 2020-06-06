@@ -8,3 +8,29 @@
 	letter-spacing: 0.675rem;
 
 }
+
+#maincard.main > p {
+    text-align: left;
+}
+
+#maincard.main > h3, b {
+    color: #505050;
+}
+
+#maincard.main > img {
+  height: 70%;
+  min-height: 70%;
+  max-height: 70%;
+  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#maincard.main > p> img.triple {
+  height: 33%;
+  min-height: 33%;
+  max-height: 33%;
+  width: 33%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
