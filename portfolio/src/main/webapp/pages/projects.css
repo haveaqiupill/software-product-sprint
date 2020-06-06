@@ -8,3 +8,21 @@
 	letter-spacing: 0.675rem;
 
 }
+
+section#maincard.main img {
+  height: 30%;
+  min-height: 30%;
+  max-height: 30%;
+  width: 30%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section#maincard.main.poster img {
+  height: 70%;
+  min-height: 70%;
+  max-height: 70%;
+  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
