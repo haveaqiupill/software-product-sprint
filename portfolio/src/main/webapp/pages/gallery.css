@@ -4,7 +4,8 @@ html {
 }
 
 body {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font: "Source Sans Pro";
+  font-weight: 200;
   line-height: 1.45em;
   background-color: #f0f0f0;
   color: #404646;
@@ -78,11 +79,16 @@ body {
 }
 .card__content {
   padding: 1.6rem;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font: "Source Sans Pro";
+  font-weight: 200;
 }
 
 .card__content > h3 {
   color: #666666;
+}
+
+.card.card--frameless > .card__content.big-script {
+  color: #eeeeee;
 }
 
 .card__button {
