@@ -18,6 +18,10 @@ section#maincard.main img {
      object-fit: cover;
 }
 
+section#maincard.main > h3, b {
+    color: #505050;
+}
+
 section#maincard.main.poster img {
   height: 70%;
   min-height: 70%;
