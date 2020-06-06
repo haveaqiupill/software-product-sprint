@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Sacramento|Source+Sans+Pro:200,400");
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Sacramento|Source+Sans+Pro:200,300,400");
 html {
   font-size: 14.5px;
 }
 
-body {
+body, input, select, textarea {
   font: "Source Sans Pro";
   font-weight: 200;
   line-height: 1.45em;
@@ -11,12 +11,22 @@ body {
   color: #404646;
 }
 
+#intro.main > h2 {
+    color: #ffffff;
+	font-family: "Source Sans Pro";
+	font-size: 2.4em;
+	font-weight: 300;
+	letter-spacing: 0.675rem;
+
+}
+
 * {
   box-sizing: border-box;
 }
 
 .main-container {
-  margin: 1.6rem 0.8rem;
+  margin: 0rem 0.8rem;
+  padding: 4rem 0rem
 }
 
 .grid-container {
@@ -34,7 +44,7 @@ body {
 .card {
   grid-row: auto / span 1;
   grid-column: auto / span 1;
-  background-color: white;
+  background-color: #eeeeee;
   box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
 }
 .card h1, .card h2, .card h3, .card h4, .card p {
@@ -89,6 +99,12 @@ body {
 
 .card.card--frameless > .card__content.big-script {
   color: #eeeeee;
+}
+
+.card.card--frameless > .card__content.quote {
+  color: #eeeeee;
+  font: "Source Sans Pro";
+  font-weight: 200;
 }
 
 .card__button {

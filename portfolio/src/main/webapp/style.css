@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,400");
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,300,400");
 
 /*
 	Epilogue by TEMPLATED
@@ -92,14 +92,15 @@
 /* Type */
 
 	body {
-		background-color: #191919;
+		/* background-color: #191919; */
+        background-color: #000;
 		color: #666666;
 	}
 
 	body, input, select, textarea {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 17pt;
-		font-weight: 200;
+		font-weight: 300;
 		line-height: 1.65;
 	}
 
@@ -1059,7 +1060,7 @@
 /* Main Card */
 
     #maincard {
-		padding: 4em 4em 2em 4em;
+		padding: 2em 2em 2em 2em;
 		background-color: #eeeeee;
 		border-radius: 4px;
 		text-align: center;
@@ -1514,7 +1515,7 @@
 /* Intro */
 
 	#intro {
-		padding: 4em 4em 2em 4em;
+		padding: 3em 4em 0.5em 4em;
 		background-color: #161712;
 		border-radius: 4px;
 		text-align: center;
@@ -1527,7 +1528,7 @@
 		@media screen and (max-width: 736px) {
 
 			#intro {
-				padding: 2em 2em 0.1em 2em;
+				padding: 1.5em 2em 0.1em 2em;
 			}
 
 		}
@@ -1535,7 +1536,7 @@
 		@media screen and (max-width: 480px) {
 
 			#intro {
-				padding: 2em 1em 0.1em 1em;
+				padding: 1.5em 1em 0.1em 1em;
 			}
 
 				#intro p br {

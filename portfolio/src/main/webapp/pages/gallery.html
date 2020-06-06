@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Gallery</title>
     <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="stars.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../images/logo.png">
     <script src="../script.js"></script>
@@ -13,14 +14,15 @@
   <body>
     <!-- Banner -->
     <section id="intro" class="main">
-      <h2 id="maincard">Gallery</h2>
+      <h2>Gallery</h2>
     </section>
 
     <!-- Wrapper -->
-    <div>
+    <div class="stars">
+    <div class="twinkling">
     <div class='main-container'>
     <div class='grid-container'>
-      <div class='card card--2x'>
+      <div class='card card--2x card--frameless'>
         <div class='card__content big-script padding-large'>
           <p>Friends become our chosen family</p>
         </div>
@@ -35,8 +37,8 @@
           <img src='gallery/Selfie.png'>
         </div>
       </div>
-      <div class='card'>
-        <div class='card__content'>
+      <div class='card card--frameless'>
+        <div class='card__content quote'>
           <p><em>To those who look up to the stars and wish.</em></p>
           <p>— Sarah J Maas</p>
         </div>
@@ -71,10 +73,10 @@
       <div class='card card--horizontal'>
         <div class='card__side-by-side'>
           <div class='card__image'>
-            <img src='gallery/Birthday.png'>
+            <img src='gallery/Squad.png'>
           </div>
           <div class='card__content'>
-            <h3>DHS</h3>
+            <h3>SQUAD</h3>
             <p>Thank you for growing up with me.</p>
           </div>
         </div>
@@ -86,11 +88,11 @@
       </div>
       <div class='card'>
         <div class='card__image'>
-          <img src='gallery/Squad.png'>
+          <img src='gallery/Birthday.png'>
         </div>
       </div>
-      <div class='card'>
-        <div class='card__content'>
+      <div class='card card--frameless'>
+        <div class='card__content quote'>
           <p><em>Saying thank you is more than good manners, it is good spirituality.</em></p>
           <p>— Alfred Painter</p>
         </div>
@@ -121,18 +123,17 @@
         </div>
       </div>
       <div class='card'>
-        <div class='card__content'>
-          <p><em>Kindness is a language which the deaf can hear and the blind can see.</em></p>
-          <p>— Mark Twain</p>
-        </div>
-      </div>
-      <div class='card'>
         <div class='card__image'>
           <img src='gallery/RC4_MPH.png'>
         </div>
       </div>
+      <div class='card card--frameless'>
+        <div class='card__content quote'>
+          <p><em>Kindness is a language which the deaf can hear and the blind can see.</em></p>
+          <p>— Mark Twain</p>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 
     <!-- CTA -->
@@ -146,7 +147,8 @@
     <footer id="footer">
       <p class="copyright">&copy; Qiu Jing Ying | 2020<br /> Credits: Design by <a href="https://templated.co">TEMPLATED</a> | Images by <a href="https://unsplash.com">Unsplash</a></p>
     </footer>
-
+  </div>
+  </div>
 
   <script src="../css_js/jquery.min.js"></script>
   <script src="../css_js/skel.min.js"></script>
