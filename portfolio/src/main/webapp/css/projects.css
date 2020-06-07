@@ -4,12 +4,12 @@
     color: #ffffff;
 	font-family: "Source Sans Pro";
 	font-size: 2.4em;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0.675rem;
 
 }
 
-#main.main > p, p > b {
+#main.main > p {
     color: #eeeeee;
 }
 
