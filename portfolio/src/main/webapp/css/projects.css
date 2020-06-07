@@ -9,7 +9,44 @@
 
 }
 
-section#maincard.main img {
+#main.main > p, p > b {
+    color: #eeeeee;
+}
+
+/* Main Card */
+
+    .maincard {
+		padding: 2em 2em 2em 2em;
+		background-color: #eeeeee;
+		border-radius: 4px;
+		text-align: center;
+	}
+
+        .maincard.main > p, h2 {
+            color: #666666;
+        }
+
+        .main > header:first-child {
+			text-align: center;
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.main {
+				padding: 2em 2em 0.1em 2em;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.main {
+				padding: 2em 1em 0.1em 1em;
+			}
+
+		}
+
+section.maincard.main img {
   height: 30%;
   min-height: 30%;
   max-height: 30%;
@@ -18,11 +55,11 @@ section#maincard.main img {
      object-fit: cover;
 }
 
-section#maincard.main > h3, b {
+section.maincard.main > h3, b {
     color: #505050;
 }
 
-section#maincard.main.poster img {
+section.maincard.main.poster img {
   height: 70%;
   min-height: 70%;
   max-height: 70%;
