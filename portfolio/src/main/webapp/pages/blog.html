@@ -11,7 +11,7 @@
   <script src="../script.js"></script>
 </head>
 
-<body>
+<body onLoad="getComments()">
   <!-- Banner -->
   <section id="intro" class="main">
     <h2>Blog</h2>
@@ -36,6 +36,18 @@
           </header>
           <p>I wonder what could it be.</p>
         </article>
+      </section>
+
+      <section class="commentcard">
+          <h3> Comments </h3>
+          <form action="/data" method="POST">
+            <p>Enter a comment:</p>
+            <textarea name="comment-input">Enter some random comment here</textarea>
+            <br/><br/>
+
+            <input type="submit" />
+          </form>
+          <div id="comments-container"/>
       </section>
     </div>
 

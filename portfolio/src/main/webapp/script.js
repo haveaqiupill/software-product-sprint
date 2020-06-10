@@ -26,3 +26,26 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+/**
+ * Fetches stats from the servers and adds them to the DOM.
+ */
+function getComments() {
+  fetch('/data').then(response => response.json()).then((data) => {
+    // stats is an object, not a string, so we have to
+    // reference its fields to create HTML content
+    const dataElement = document.getElementById('comments-container');
+    dataElement.innerHTML = '';
+    for(var i = 0; i < data.length; i++) {
+        dataElement.appendChild(
+        createListElement(data[i]));
+    }
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
