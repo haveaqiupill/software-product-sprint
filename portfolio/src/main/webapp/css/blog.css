@@ -34,3 +34,44 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+/* Comment Card */
+
+.commentcard {
+	padding: 2em 2em 2em 2em;
+	background-color: #eeeeee;
+	border-radius: 4px;
+	text-align: center;
+}
+
+	.commentcard.main > p, h2 {
+		color: #666666;
+	}
+
+	.comment > header:first-child {
+		text-align: center;
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.comment {
+			padding: 2em 2em 0.1em 2em;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.comment {
+			padding: 2em 1em 0.1em 1em;
+		}
+
+	}
+
+#comments-container {
+    color: #505050;
+}
+
+.commentcard > .button {
+    color: #505050;
+}
