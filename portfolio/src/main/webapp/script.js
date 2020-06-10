@@ -28,14 +28,10 @@ function addRandomQuote() {
 }
 
 /**
- * Fetches stats from the servers and adds them to the DOM.
+ * Fetches comments from the servers and adds them to the DOM.
  */
 function getComments() {
   fetch('/data').then(response => response.json()).then((data) => {
-    // stats is an object, not a string, so we have to
-    // reference its fields to create HTML content
-    console.log(data);
-    console.log(data[0]);
     const dataElement = document.getElementById('comments-container');
     dataElement.innerHTML = '';
     dataElement.appendChild(
