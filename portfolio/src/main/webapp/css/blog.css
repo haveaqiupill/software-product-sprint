@@ -72,8 +72,10 @@
     color: #505050;
 }
 
-section.commentcard > .button {
-    color: #505050;
+section.commentcard > form > input[type="submit"] {
+    background-color: transparent;
+	box-shadow: inset 0 0 0 2px #505050;
+	color: #505050 !important;
 }
 
 section.commentcard > h3 {
