@@ -34,7 +34,7 @@ function getComments() {
   fetch('/data').then(response => response.json()).then((data) => {
     const dataElement = document.getElementById('comments-container');
     dataElement.innerHTML = '';
-    for(var i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
         dataElement.appendChild(
         createListElement(data[i]));
     }
