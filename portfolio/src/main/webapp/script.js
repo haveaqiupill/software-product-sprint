@@ -35,8 +35,7 @@ function getComments() {
     const dataElement = document.getElementById('comments-container');
     dataElement.innerHTML = '';
     for (var i = 0; i < data.length; i++) {
-        dataElement.appendChild(
-        createListElement(data[i]));
+        dataElement.appendChild(createListElement(data[i]));
     }
   });
 }
