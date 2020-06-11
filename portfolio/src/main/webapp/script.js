@@ -34,9 +34,9 @@ function getComments() {
   fetch('/data').then(response => response.json()).then((data) => {
     const dataElement = document.getElementById('comments-container');
     dataElement.innerHTML = '';
-    dataElement.appendChild(createListElement(data[0]));
-    dataElement.appendChild(createListElement(data[1]));
-    dataElement.appendChild(createListElement(data[2]));
+    for (var i = 0; i < data.length; i++) {
+        dataElement.appendChild(createListElement(data[i]));
+    }
   });
 }
 
