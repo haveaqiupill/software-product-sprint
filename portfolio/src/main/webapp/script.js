@@ -26,3 +26,9 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+function getDataFromPortfolio() {
+  fetch('/data').then(response => response.innerText).then((text) => {
+    document.getElementById('text-container').innerText = text;
+  });
+} 
