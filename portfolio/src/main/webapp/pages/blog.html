@@ -11,7 +11,7 @@
   <script src="../script.js"></script>
 </head>
 
-<body>
+<body onLoad="getComments()">
   <!-- Banner -->
   <section id="intro" class="main">
     <h2>Blog</h2>
@@ -36,6 +36,10 @@
           </header>
           <p>I wonder what could it be.</p>
         </article>
+      </section>
+
+      <section class="comment-card">
+        <div id="comments-container"/>
       </section>
     </div>
 

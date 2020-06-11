@@ -27,8 +27,22 @@ function addRandomQuote() {
   quoteContainer.innerText = quote;
 }
 
-function getDataFromPortfolio() {
-  fetch('/data').then(response => response.innerText).then((text) => {
-    document.getElementById('text-container').innerText = text;
+/**
+ * Fetches comments from the servers and adds them to the DOM.
+ */
+function getComments() {
+  fetch('/data').then(response => response.json()).then((data) => {
+    const dataElement = document.getElementById('comments-container');
+    dataElement.innerHTML = '';
+    dataElement.appendChild(createListElement(data[0]));
+    dataElement.appendChild(createListElement(data[1]));
+    dataElement.appendChild(createListElement(data[2]));
   });
-} 
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
