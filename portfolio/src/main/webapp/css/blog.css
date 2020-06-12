@@ -52,6 +52,12 @@
 		text-align: center;
 	}
 
+    comment:after{
+        content:" "; 
+        display:inline-block; 
+        width:32px;
+    }
+
 	@media screen and (max-width: 736px) {
 
 		.comment {
@@ -76,6 +82,14 @@ section.comment-card > form > input[type="submit"] {
     background-color: transparent;
 	box-shadow: inset 0 0 0 2px #505050;
 	color: #505050 !important;
+}
+
+#comments-container > li.comment > button {
+    background-color: transparent;
+	box-shadow: inset 0 0 0 2px #505050;
+	color: #505050 !important;
+	height: 3em;
+	font-size: 0.5em;
 }
 
 section.comment-card > h3 {
