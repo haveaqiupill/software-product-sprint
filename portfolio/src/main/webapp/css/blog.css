@@ -42,6 +42,7 @@
 	background-color: #eeeeee;
 	border-radius: 4px;
 	text-align: center;
+	word-wrap: break-word;
 }
 
 	.comment-card.main > p, h2 {
@@ -53,8 +54,8 @@
 	}
 
     comment:after{
-        content:" "; 
-        display:inline-block; 
+        content:" ";
+        display:inline-block;
         width:32px;
     }
 
