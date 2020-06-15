@@ -16,14 +16,17 @@
  * Adds a random quote to the page.
  */
 function addRandomQuote() {
-  const quotes =
-      ['Don\'t let the hard days win.', 'To the stars who listen — and the dreams that are answered.', 'Only you can decide what breaks you.'];
+  const quotes = [
+    "Don't let the hard days win.",
+    "To the stars who listen — and the dreams that are answered.",
+    "Only you can decide what breaks you.",
+  ];
 
   // Pick a random quote.
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.
-  const quoteContainer = document.getElementById('quote-container');
+  const quoteContainer = document.getElementById("quote-container");
   quoteContainer.innerText = quote;
 }
 
@@ -31,34 +34,36 @@ function addRandomQuote() {
  * Fetches comments from the servers and adds them to the DOM.
  */
 function getComments() {
-  fetch('/data').then(response => response.json()).then((comments) => {
-    const commentListElement = document.getElementById('comments-container');
-    comments.forEach((comment) => {
-      commentListElement.appendChild(createCommentElement(comment));
-    })
-  });
+  fetch("/data")
+    .then((response) => response.json())
+    .then((comments) => {
+      const commentListElement = document.getElementById("comments-container");
+      comments.forEach((comment) => {
+        commentListElement.appendChild(createCommentElement(comment));
+      });
+    });
 }
 
 /** Creates an <li> element containing text. */
 function createListElement(text) {
-  const liElement = document.createElement('li');
+  const liElement = document.createElement("li");
   liElement.innerText = text;
   return liElement;
 }
 
 /** Creates an element that represents a comment, including its delete button. */
 function createCommentElement(comment) {
-  const commentElement = document.createElement('li');
-  commentElement.className = 'comment';
+  const commentElement = document.createElement("li");
+  commentElement.className = "comment";
 
-  const textElement = document.createElement('comment');
+  const textElement = document.createElement("comment");
   textElement.innerText = comment.text;
 
-  const spacer = document.createElement('spacer');
+  const spacer = document.createElement("spacer");
 
-  const deleteButtonElement = document.createElement('button');
-  deleteButtonElement.innerText = 'Delete';
-  deleteButtonElement.addEventListener('click', () => {
+  const deleteButtonElement = document.createElement("button");
+  deleteButtonElement.innerText = "Delete";
+  deleteButtonElement.addEventListener("click", () => {
     deleteComment(comment);
 
     // Remove the comment from the DOM.
@@ -74,6 +79,6 @@ function createCommentElement(comment) {
 /** Tells the server to delete the comment. */
 function deleteComment(comment) {
   const params = new URLSearchParams();
-  params.append('id', comment.id);
-  fetch('/delete-comment', {method: 'POST', body: params});
+  params.append("id", comment.id);
+  fetch("/delete-comment", { method: "POST", body: params });
 }
