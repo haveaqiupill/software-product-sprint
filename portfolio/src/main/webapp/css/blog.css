@@ -42,7 +42,6 @@ b {
   background-color: #eeeeee;
   border-radius: 4px;
   text-align: center;
-  word-wrap: break-word;
 }
 
 .comment-card.main > p,
