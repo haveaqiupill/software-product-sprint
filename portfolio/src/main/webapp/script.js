@@ -13,42 +13,21 @@
 // limitations under the License.
 
 /**
- * Adds a random quote to the page.
- */
-function addRandomQuote() {
-  const quotes = [
-    "Don't let the hard days win.",
-    "To the stars who listen — and the dreams that are answered.",
-    "Only you can decide what breaks you.",
-  ];
-
-  // Pick a random quote.
-  const quote = quotes[Math.floor(Math.random() * quotes.length)];
-
-  // Add it to the page.
-  const quoteContainer = document.getElementById("quote-container");
-  quoteContainer.innerText = quote;
-}
-
-/**
  * Fetches comments from the servers and adds them to the DOM.
  */
 function getComments() {
+  const commentListElement = document.getElementById("comments-container");
+  const loadingElement = createLoadingElement();
+  commentListElement.appendChild(loadingElement);
+
   fetch("/data")
     .then((response) => response.json())
     .then((comments) => {
-      const commentListElement = document.getElementById("comments-container");
       comments.forEach((comment) => {
         commentListElement.appendChild(createCommentElement(comment));
       });
+      commentListElement.removeChild(loadingElement);
     });
-}
-
-/** Creates an <li> element containing text. */
-function createListElement(text) {
-  const liElement = document.createElement("li");
-  liElement.innerText = text;
-  return liElement;
 }
 
 /** Creates an element that represents a comment, including its delete button. */
@@ -59,7 +38,8 @@ function createCommentElement(comment) {
   const textElement = document.createElement("comment");
   textElement.innerText = comment.text;
 
-  const spacer = document.createElement("spacer");
+  const dateElement = document.createElement("date");
+  dateElement.innerText = comment.timestamp;
 
   const deleteButtonElement = document.createElement("button");
   deleteButtonElement.innerText = "Delete";
@@ -71,14 +51,32 @@ function createCommentElement(comment) {
   });
 
   commentElement.appendChild(textElement);
-  commentElement.appendChild(spacer);
+  commentElement.appendChild(dateElement);
   commentElement.appendChild(deleteButtonElement);
   return commentElement;
+}
+
+function createLoadingElement() {
+  const loadingElement = document.createElement("i");
+  loadingElement.className = "fa fa-spinner fa-pulse fa-3x fa-fw";
+  return loadingElement;
+}
+
+function stoppedTyping() {
+  const input = document.getElementsByName("comment-input");
+  if (input[0] != null) {
+    const text = input[0].value;
+    document.getElementById("submit_button").disabled = !/^(?!\s*$).+/.test(
+      text
+    );
+  }
 }
 
 /** Tells the server to delete the comment. */
 function deleteComment(comment) {
   const params = new URLSearchParams();
   params.append("id", comment.id);
-  fetch("/delete-comment", { method: "POST", body: params });
+  fetch("/delete-comment", { method: "POST", body: params }).then((r) =>
+    console.log(r)
+  );
 }

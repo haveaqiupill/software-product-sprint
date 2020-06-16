@@ -762,8 +762,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #ef6480;
-  box-shadow: 0 0 0 1px #ef6480;
+  box-shadow: 0 0 0 0.5px #914e4e;
 }
 
 .select-wrapper:before {

@@ -46,14 +46,16 @@
           <section class="comment-card">
             <h3>Comments</h3>
             <form action="/data" method="POST">
-              <p>Enter a comment:</p>
-              <textarea
-                name="comment-input"
-                placeholder="Enter some random comment here..."
-              ></textarea>
-              <br><br>
-
-              <input type="submit" />
+              <label
+                >Enter a comment:<br />
+                <textarea
+                  name="comment-input"
+                  onkeyup="stoppedTyping()"
+                  placeholder="Enter some random comment here..."
+                ></textarea>
+              </label>
+              <br />
+              <input id="submit_button" type="submit" disabled />
             </form>
             <div id="comments-container"></div>
           </section>
@@ -67,11 +69,10 @@
             </li>
           </ul>
         </section>
-
         <!-- Footer -->
         <footer id="footer">
           <p class="copyright">
-            &copy; Qiu Jing Ying | 2020<br>
+            &copy; Qiu Jing Ying | 2020<br />
             Credits: Design by TEMPLATED | Images by Unsplash
           </p>
         </footer>
