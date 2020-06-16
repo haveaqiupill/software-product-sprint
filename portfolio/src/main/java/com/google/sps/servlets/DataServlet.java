@@ -28,6 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.Gson;
 import com.google.sps.data.Comment;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -50,7 +53,10 @@ public class DataServlet extends HttpServlet {
       String text = (String) entity.getProperty("text");
       long timestamp = (long) entity.getProperty("timestamp");
 
-      Comment comment = new Comment(id, text, timestamp);
+      SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss Z");
+      Date date = new Date(timestamp);
+
+      Comment comment = new Comment(id, text, formatter.format(date));
       comments.add(comment);
     }
 
@@ -67,7 +73,7 @@ public class DataServlet extends HttpServlet {
     long timestamp = System.currentTimeMillis();
 
     Entity commentEntity = new Entity("Comment");
-    commentEntity.setProperty("text", text);
+    commentEntity.setProperty("text", text.trim());
     commentEntity.setProperty("timestamp", timestamp);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
