@@ -1,138 +1,149 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Sacramento|Source+Sans+Pro:200,300,400");
 
 #intro.main > h2 {
-    color: #ffffff;
-	font-family: "Source Sans Pro";
-	font-size: 2.4em;
-	font-weight: 300;
-	letter-spacing: 0.675rem;
-
+  color: #ffffff;
+  font-family: "Source Sans Pro";
+  font-size: 2.4em;
+  font-weight: 300;
+  letter-spacing: 0.675rem;
 }
 
-#maincard.main > p {
-    text-align: left;
+#main-card.main > p {
+  text-align: left;
 }
 
-#maincard.main > h3, b {
-    color: #505050;
+#main-card.main > h3,
+b {
+  color: #505050;
 }
 
-#maincard.main > img {
+#main-card.main > img {
   height: 70%;
   min-height: 70%;
   max-height: 70%;
   width: 70%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-#maincard.main > p> img.triple {
+#main-card.main > p > img.triple {
   height: 33%;
   min-height: 33%;
   max-height: 33%;
   width: 33%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* Comment Card */
 
 .comment-card {
-	padding: 2em 2em 2em 2em;
-	background-color: #eeeeee;
-	border-radius: 4px;
-	text-align: center;
-    word-wrap: break-word;
+  padding: 2em 2em 2em 2em;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-	.comment-card.main > p, h2 {
-		color: #666666;
-	}
+.comment-card.main > p,
+h2 {
+  color: #666666;
+}
 
-	comment > header:first-child {
-		text-align: center;
-	}
+comment > header:first-child {
+  text-align: center;
+}
 
-    comment:after{
-        content:" "; 
-        display:inline-block; 
-        width:32px;
+comment:after {
+  content: " ";
+  display: inline-block;
+  width: 32px;
+}
+
+@media screen and (max-width: 736px) {
+  comment {
+    padding: 2em 2em 0.1em 2em;
+  }
+
+  .comment > header:first-child {
+    text-align: center;
+  }
+
+  comment:after {
+    content: " ";
+    display: inline-block;
+    width: 32px;
+  }
+
+  comment {
+    padding: 2em 1em 0.1em 1em;
+  }
+
+  @media screen and (max-width: 480px) {
+    .comment {
+      padding: 2em 1em 0.1em 1em;
     }
+  }
 
-	@media screen and (max-width: 736px) {
-
-		comment {
-			padding: 2em 2em 0.1em 2em;
-		}
-
-	}
-
-	@media screen and (max-width: 480px) {
-
-		comment {
-			padding: 2em 1em 0.1em 1em;
-		}
-
-	}
-
-#comments-container {
+  #comments-container {
     color: #505050;
-}
+  }
 
-section.comment-card > form > input[type="submit"] {
+  section.comment-card > form > input[type="submit"] {
     background-color: transparent;
-	box-shadow: inset 0 0 0 2px #505050;
-	color: #505050 !important;
-}
+    box-shadow: inset 0 0 0 2px #505050;
+    color: #505050 !important;
+  }
 
-section.comment-card > form > input[type="submit"]:hover {
+  section.comment-card > form > input[type="submit"]:hover {
     margin: 0em;
     color: rgb(52, 153, 31) !important;
     box-shadow: inset 0 0 0 2px rgb(45, 139, 26);
-}
+  }
 
-#comments-container > li.comment > button {
+  #comments-container > li.comment > button {
     background-color: transparent;
-	box-shadow: inset 0 0 0 2px #505050;
-	color: #505050 !important;
-	height: 3em;
-	font-size: 0.5em;
+    box-shadow: inset 0 0 0 2px #505050;
+    color: #505050 !important;
+    height: 3em;
+    font-size: 0.5em;
     display: block;
-}
+  }
 
-#comments-container > li.comment > button:hover {
-    color: #EF6480 !important;
-    box-shadow: inset 0 0 0 2px #EF6480;
-}
+  #comments-container > li.comment > button:hover {
+    color: #ef6480 !important;
+    box-shadow: inset 0 0 0 2px #ef6480;
+  }
 
-#comments-container > li.comment {
+  #comments-container > li.comment {
     background: rgba(144, 144, 144, 0.075);
-	border-color: #666666;
+    border-color: #666666;
     list-style: none;
     text-align: left;
-	color: #505050 !important;
+    color: #505050 !important;
     margin: 1em;
     padding: 0.5em;
     padding-left: 3em;
-}
+  }
 
-#comments-container > li.comment > date{
-	font-size: 0.9em;
-	font-weight: 300;
+  #comments-container > li.comment > date {
+    font-size: 0.9em;
+    font-weight: 300;
     font-style: italic;
-	color: #807979 !important;
+    color: #807979 !important;
     display: block;
     padding-block-end: 0.5em;
-}
+  }
 
-#comments-container > li.comment:before {
-  content: "\f007";
-  font-family: FontAwesome;
-  display: inline-block;
-  margin-left: -2em; /* same as padding-left set on li */
-  width: 2em; /* same as padding-left set on li */
-}
+  #comments-container > li.comment:before {
+    content: "\f007";
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -2em; /* same as padding-left set on li */
+    width: 2em; /* same as padding-left set on li */
+  }
 
-section.comment-card > h3 {
+  section.comment-card > h3 {
     color: #505050;
+  }
 }

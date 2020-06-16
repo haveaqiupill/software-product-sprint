@@ -4,12 +4,11 @@ html {
 }
 
 #intro.main > h2 {
-    color: #ffffff;
-	font-family: "Source Sans Pro";
-	font-size: 2.4em;
-	font-weight: 300;
-	letter-spacing: 0.675rem;
-
+  color: #ffffff;
+  font-family: "Source Sans Pro";
+  font-size: 2.4em;
+  font-weight: 300;
+  letter-spacing: 0.675rem;
 }
 
 /* Timeline */
@@ -30,7 +29,7 @@ html {
   position: absolute;
   left: 50%;
   top: 0;
-  content: ' ';
+  content: " ";
   display: block;
   width: 6px;
   height: 100%;
@@ -193,7 +192,7 @@ html {
   position: absolute;
   top: 50%;
   right: -40px;
-  content: ' ';
+  content: " ";
   display: block;
   width: 12px;
   height: 12px;
@@ -209,7 +208,7 @@ html {
     position: absolute;
     top: -30px;
     left: 50%;
-    content: ' ';
+    content: " ";
     display: block;
     margin-left: -10px;
   }
@@ -242,7 +241,8 @@ html {
   font-style: italic;
   line-height: 1.5em;
 }
-.desc a, p {
+.desc a,
+p {
   color: #eeeeee;
   text-decoration: none;
 }

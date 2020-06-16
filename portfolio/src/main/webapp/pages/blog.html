@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/stars.css" />
+    <link rel="stylesheet" href="../css/blog.css" />
+    <link rel="icon" href="../images/homepage/logo.png" />
+    <script src="../script.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Blog</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/stars.css">
-  <link rel="stylesheet" href="../css/blog.css">
-  <link rel="icon" href="../images/homepage/logo.png">
-  <script src="../script.js"></script>
-</head>
+  <body onLoad="getComments()">
+    <!-- Banner -->
+    <section id="intro" class="main">
+      <h2>Blog</h2>
+    </section>
 
-<body onLoad="getComments()">
-  <!-- Banner -->
-  <section id="intro" class="main">
-    <h2>Blog</h2>
-  </section>
+    <!-- Wrapper -->
+    <div class="stars">
+      <div class="twinkling">
+        <div id="wrapper">
+          <section class="main items">
+            <article class="item">
+              <header>
+                <a href="blog/photography.html"
+                  ><img src="../images/blog/photography1.png" alt="Photography"
+                /></a>
+                <h3>Photography</h3>
+              </header>
+              <p>What I enjoy photographing.</p>
+            </article>
+            <article class="item">
+              <header>
+                <a href="blog/hidden_talent.html"
+                  ><img
+                    src="../images/blog/Piplup2.png"
+                    alt="Piplup underwater"
+                /></a>
+                <h3>My Hidden Talent</h3>
+              </header>
+              <p>I wonder what could it be.</p>
+            </article>
+          </section>
 
-  <!-- Wrapper -->
-  <div class="stars">
-  <div class="twinkling">
-    <div id="wrapper">
-        <section class="main items">
-        <article class="item">
-          <header>
-            <a href="blog/photography.html"><img src="../images/blog/photography1.png" alt="Photography" /></a>
-            <h3>Photography</h3>
-          </header>
-          <p>What I enjoy photographing.</p>
-        </article>
-        <article class="item">
-          <header>
-            <a href="blog/hidden_talent.html"><img src="../images/blog/Piplup2.png" alt="Piplup underwater" /></a>
-            <h3>My Hidden Talent</h3>
-          </header>
-          <p>I wonder what could it be.</p>
-        </article>
-      </section>
+          <section class="comment-card">
+            <h3>Comments</h3>
+            <form action="/data" method="POST">
+              <label
+                >Enter a comment:<br />
+                <textarea
+                  name="comment-input"
+                  onkeyup="stoppedTyping()"
+                  placeholder="Enter some random comment here..."
+                ></textarea>
+              </label>
+              <br />
+              <input id="submit_button" type="submit" disabled />
+            </form>
+            <div id="comments-container"></div>
+          </section>
+        </div>
 
-      <section class="comment-card">
-          <h3> Comments </h3>
-          <form action="/data" method="POST">
-            <label>Enter a comment:<br>
-            <textarea name="comment-input" onkeyup="stoppedTyping()" placeholder="Enter some random comment here..."></textarea>
-            </label>
-            <br>
-            <input id="submit_button" type="submit" disabled/>
-          </form>
-          <div id="comments-container"></div>
-      </section>
+        <!-- CTA -->
+        <section id="cta" class="main special">
+          <ul class="actions">
+            <li>
+              <a href="../index.html" class="button small">Go back Home</a>
+            </li>
+          </ul>
+        </section>
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">
+            &copy; Qiu Jing Ying | 2020<br />
+            Credits: Design by TEMPLATED | Images by Unsplash
+          </p>
+        </footer>
+      </div>
     </div>
 
-  <!-- CTA -->
-  <section id="cta" class="main special">
-    <ul class="actions">
-      <li><a href="../index.html" class="button small">Go back Home</a></li>
-    </ul>
-  </section>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <p class="copyright">&copy; Qiu Jing Ying | 2020<br /> Credits: Design by TEMPLATED | Images by Unsplash</p>
-  </footer>
-  </div>
-  </div>
-
-<script src="../js/jquery.min.js"></script>
-<script src="../js/skel.min.js"></script>
-<script src="../js/util.js"></script>
-<script src="../js/main.js"></script>
-
-</body>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/skel.min.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
 </html>

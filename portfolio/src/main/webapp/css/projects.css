@@ -1,69 +1,66 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Sacramento|Source+Sans+Pro:200,300,400");
 
 #intro.main > h2 {
-    color: #ffffff;
-	font-family: "Source Sans Pro";
-	font-size: 2.4em;
-	font-weight: 400;
-	letter-spacing: 0.675rem;
-
+  color: #ffffff;
+  font-family: "Source Sans Pro";
+  font-size: 2.4em;
+  font-weight: 400;
+  letter-spacing: 0.675rem;
 }
 
 #main.main > p {
-    color: #eeeeee;
+  color: #eeeeee;
 }
 
 /* Main Card */
 
-    .maincard {
-		padding: 2em 2em 2em 2em;
-		background-color: #eeeeee;
-		border-radius: 4px;
-		text-align: center;
-	}
+.main-card {
+  padding: 2em 2em 2em 2em;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  text-align: center;
+}
 
-        .maincard.main > p, h2 {
-            color: #666666;
-        }
+.main-card.main > p,
+h2 {
+  color: #666666;
+}
 
-        .main > header:first-child {
-			text-align: center;
-		}
+.main > header:first-child {
+  text-align: center;
+}
 
-		@media screen and (max-width: 736px) {
+@media screen and (max-width: 736px) {
+  .main {
+    padding: 2em 2em 0.1em 2em;
+  }
+}
 
-			.main {
-				padding: 2em 2em 0.1em 2em;
-			}
+@media screen and (max-width: 480px) {
+  .main {
+    padding: 2em 1em 0.1em 1em;
+  }
+}
 
-		}
-
-		@media screen and (max-width: 480px) {
-
-			.main {
-				padding: 2em 1em 0.1em 1em;
-			}
-
-		}
-
-section.maincard.main img {
+section.main-card.main img {
   height: 30%;
   min-height: 30%;
   max-height: 30%;
   width: 30%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-section.maincard.main > h3, b {
-    color: #505050;
+section.main-card.main > h3,
+b {
+  color: #505050;
 }
 
-section.maincard.main.poster img {
+section.main-card.main.poster img {
   height: 70%;
   min-height: 70%;
   max-height: 70%;
   width: 70%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }

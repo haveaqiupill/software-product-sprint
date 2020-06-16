@@ -16,32 +16,34 @@
  * Fetches comments from the servers and adds them to the DOM.
  */
 function getComments() {
-  const commentListElement = document.getElementById('comments-container');
+  const commentListElement = document.getElementById("comments-container");
   const loadingElement = createLoadingElement();
   commentListElement.appendChild(loadingElement);
 
-  fetch('/data').then(response => response.json()).then((comments) => {
-    comments.forEach((comment) => {
-      commentListElement.appendChild(createCommentElement(comment));
-    })
-    commentListElement.removeChild(loadingElement);
-  });
+  fetch("/data")
+    .then((response) => response.json())
+    .then((comments) => {
+      comments.forEach((comment) => {
+        commentListElement.appendChild(createCommentElement(comment));
+      });
+      commentListElement.removeChild(loadingElement);
+    });
 }
 
 /** Creates an element that represents a comment, including its delete button. */
 function createCommentElement(comment) {
-  const commentElement = document.createElement('li');
-  commentElement.className = 'comment';
+  const commentElement = document.createElement("li");
+  commentElement.className = "comment";
 
-  const textElement = document.createElement('comment');
+  const textElement = document.createElement("comment");
   textElement.innerText = comment.text;
 
-  const dateElement = document.createElement('date');
+  const dateElement = document.createElement("date");
   dateElement.innerText = comment.timestamp;
 
-  const deleteButtonElement = document.createElement('button');
-  deleteButtonElement.innerText = 'Delete';
-  deleteButtonElement.addEventListener('click', () => {
+  const deleteButtonElement = document.createElement("button");
+  deleteButtonElement.innerText = "Delete";
+  deleteButtonElement.addEventListener("click", () => {
     deleteComment(comment);
 
     // Remove the comment from the DOM.
@@ -55,27 +57,26 @@ function createCommentElement(comment) {
 }
 
 function createLoadingElement() {
-    const loadingElement = document.createElement('i');
-    loadingElement.className = "fa fa-spinner fa-pulse fa-3x fa-fw";
-    return loadingElement;
+  const loadingElement = document.createElement("i");
+  loadingElement.className = "fa fa-spinner fa-pulse fa-3x fa-fw";
+  return loadingElement;
 }
 
-function stoppedTyping(){
-    const input = document.getElementsByName("comment-input");
-    if(input[0] != null) { 
-        const text = input[0].value;
-        if (/^(?!\s*$).+/.test(text)){
-            document.getElementById('submit_button').disabled = false;
-        } else {
-        document.getElementById('submit_button').disabled = true;
-        }
-    }
-    
+function stoppedTyping() {
+  const input = document.getElementsByName("comment-input");
+  if (input[0] != null) {
+    const text = input[0].value;
+    document.getElementById("submit_button").disabled = !/^(?!\s*$).+/.test(
+      text
+    );
+  }
 }
 
 /** Tells the server to delete the comment. */
 function deleteComment(comment) {
   const params = new URLSearchParams();
-  params.append('id', comment.id);
-  fetch('/delete-comment', {method: 'POST', body: params});
+  params.append("id", comment.id);
+  fetch("/delete-comment", { method: "POST", body: params }).then((r) =>
+    console.log(r)
+  );
 }
