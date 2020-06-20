@@ -39,7 +39,7 @@ function createCommentElement(comment) {
   textElement.innerText = comment.text;
 
   const dateElement = document.createElement("date");
-  const extraDetails = "Posted on: " + comment.timestamp + " | Sentiment score: " + comment.sentiment.toString();
+  const extraDetails = "Posted on: " + comment.timestamp + " | Sentiment score: " + comment.sentiment.toFixed(2);
   dateElement.innerText = extraDetails;
 
   const deleteButtonElement = document.createElement("button");
