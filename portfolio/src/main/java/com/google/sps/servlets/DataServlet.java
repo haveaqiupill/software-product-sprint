@@ -30,8 +30,6 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.io.IOException;
 import java.sql.Timestamp;
 import javax.servlet.annotation.WebServlet;
@@ -55,16 +53,12 @@ public class DataServlet extends HttpServlet {
       long id = entity.getKey().getId();
       String text = (String) entity.getProperty("text");
       long timestamp = (long) entity.getProperty("timestamp");
-
-      //Round sentiment score to 2dp
-      double sentiment = (double) entity.getProperty("sentiment");
-      BigDecimal bd = BigDecimal.valueOf(sentiment);
-      bd = bd.setScale(2, RoundingMode.HALF_UP);
+      float sentiment = (float) entity.getProperty("sentiment");
 
       SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss Z");
       Date date = new Date(timestamp);
 
-      Comment comment = new Comment(id, text, formatter.format(date), bd.doubleValue());
+      Comment comment = new Comment(id, text, formatter.format(date), sentiment);
       comments.add(comment);
     }
 
