@@ -74,7 +74,6 @@ public class DataServlet extends HttpServlet {
     String text = getParameter(request, "comment-input", "default");
     long timestamp = System.currentTimeMillis();
 
-    String message = request.getParameter("comment-input");
     Document doc =
         Document.newBuilder().setContent(text).setType(Document.Type.PLAIN_TEXT).build();
     LanguageServiceClient languageService = LanguageServiceClient.create();
@@ -90,6 +89,7 @@ public class DataServlet extends HttpServlet {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
 
+    response.sendRedirect("/pages/blog.html");
   }
 
   /**
