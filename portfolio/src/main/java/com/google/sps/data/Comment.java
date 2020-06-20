@@ -20,9 +20,9 @@ public final class Comment {
   private final long id;
   private final String text;
   private final String timestamp;
-  private final float sentiment;
+  private final double sentiment;
 
-  public Comment(long id, String text, String timestamp, float sentiment) {
+  public Comment(long id, String text, String timestamp, double sentiment) {
     this.id = id;
     this.text = text;
     this.timestamp = timestamp;
