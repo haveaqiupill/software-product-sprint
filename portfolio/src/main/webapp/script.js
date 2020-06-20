@@ -42,7 +42,7 @@ function createCommentElement(comment) {
   dateElement.innerText = comment.timestamp;
   
   const sentimentElement = document.createElement("date");
-  sentimentElement.innerText = comment.sentiment;
+  sentimentElement.innerText = comment.sentiment.toString();
 
   const deleteButtonElement = document.createElement("button");
   deleteButtonElement.innerText = "Delete";
