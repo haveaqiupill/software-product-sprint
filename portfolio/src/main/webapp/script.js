@@ -40,6 +40,9 @@ function createCommentElement(comment) {
 
   const dateElement = document.createElement("date");
   dateElement.innerText = comment.timestamp;
+  
+  const sentimentElement = document.createElement("date");
+  sentimentElement.innerText = comment.sentiment;
 
   const deleteButtonElement = document.createElement("button");
   deleteButtonElement.innerText = "Delete";
@@ -52,6 +55,7 @@ function createCommentElement(comment) {
 
   commentElement.appendChild(textElement);
   commentElement.appendChild(dateElement);
+  commentElement.appendChild(sentimentElement);
   commentElement.appendChild(deleteButtonElement);
   return commentElement;
 }

@@ -14,29 +14,30 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
+import com.google.sps.data.Comment;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
-import com.google.gson.Gson;
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Sentiment;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.List;
-import com.google.gson.Gson;
-import com.google.sps.data.Comment;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.io.IOException;
+import java.sql.Timestamp;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
@@ -52,11 +53,12 @@ public class DataServlet extends HttpServlet {
       long id = entity.getKey().getId();
       String text = (String) entity.getProperty("text");
       long timestamp = (long) entity.getProperty("timestamp");
+      float score = (float) entity.getProperty("sentiment");
 
       SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss Z");
       Date date = new Date(timestamp);
 
-      Comment comment = new Comment(id, text, formatter.format(date));
+      Comment comment = new Comment(id, text, formatter.format(date), score);
       comments.add(comment);
     }
 
@@ -69,17 +71,25 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
-    String text = getParameter(request, "comment-input", "");
+    String text = getParameter(request, "comment-input", "default");
     long timestamp = System.currentTimeMillis();
+
+    String message = request.getParameter("comment-input");
+    Document doc =
+        Document.newBuilder().setContent(text).setType(Document.Type.PLAIN_TEXT).build();
+    LanguageServiceClient languageService = LanguageServiceClient.create();
+    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
+    float score = sentiment.getScore();
+    languageService.close();
 
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("text", text.trim());
     commentEntity.setProperty("timestamp", timestamp);
+    commentEntity.setProperty("sentiment", score);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
 
-    response.sendRedirect("/pages/blog.html");
   }
 
   /**
