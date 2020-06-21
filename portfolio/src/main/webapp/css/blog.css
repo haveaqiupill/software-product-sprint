@@ -74,16 +74,14 @@ comment:after {
     display: inline-block;
     width: 32px;
   }
-
-  comment {
-    padding: 2em 1em 0.1em 1em;
-  }
+}
 
   @media screen and (max-width: 480px) {
     .comment {
       padding: 2em 1em 0.1em 1em;
     }
   }
+
 
   #comments-container {
     color: #505050;
@@ -146,4 +144,3 @@ comment:after {
   section.comment-card > h3 {
     color: #505050;
   }
-}
