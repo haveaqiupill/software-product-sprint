@@ -50,7 +50,11 @@ public final class FindMeetingQuery {
       if (!latestFirst.isEmpty()) {
         TimeRange prevTimeRange = latestFirst.poll();
         if (prevTimeRange.end() >= nextTimeRange.start()) {
-          latestFirst.add(TimeRange.fromStartEnd(prevTimeRange.start(), Math.max(nextTimeRange.end(), prevTimeRange.end()), false));
+          latestFirst.add(
+                  TimeRange.fromStartEnd(
+                          prevTimeRange.start(),
+                          Math.max(nextTimeRange.end(), prevTimeRange.end()),
+                          false));
         } else {
           latestFirst.add(prevTimeRange);
           latestFirst.add(nextTimeRange);
@@ -62,17 +66,23 @@ public final class FindMeetingQuery {
 
     earliestFirst.addAll(latestFirst);
 
-    // Get the time periods that are available for the meetings using
+    // Get the time periods that are available for the meetings
     while (!earliestFirst.isEmpty()) {
       TimeRange availableTimeRange = result.poll();
       TimeRange eventTimeRange = earliestFirst.poll();
 
       if (eventTimeRange.start() - availableTimeRange.start() >= meetingDuration) {
-        result.add(TimeRange.fromStartEnd(availableTimeRange.start(), eventTimeRange.start(), false));
+        result.add(TimeRange.fromStartEnd(
+                availableTimeRange.start(),
+                eventTimeRange.start(),
+                false));
       }
 
       if (availableTimeRange.end() - eventTimeRange.end() >= meetingDuration) {
-        result.add(TimeRange.fromStartEnd(eventTimeRange.end(), availableTimeRange.end(), false));
+        result.add(TimeRange.fromStartEnd(
+                eventTimeRange.end(),
+                availableTimeRange.end(),
+                false));
       }
     }
 
