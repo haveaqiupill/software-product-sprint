@@ -38,7 +38,8 @@ public final class FindMeetingQuery {
             .map(Event::getWhen)
             .collect(Collectors.toList());
 
-    // Combine time ranges that have overlapping time periods using two Priority Queues
+    // Combine time ranges that have overlapping 
+    // time periods using two Priority Queues
     PriorityQueue<TimeRange> earliestFirst = new PriorityQueue<>(TimeRange.ORDER_BY_START);
     PriorityQueue<TimeRange> latestFirst = new PriorityQueue<>(Collections.reverseOrder(TimeRange.ORDER_BY_END));
     earliestFirst.addAll(relevantTimeRanges);
