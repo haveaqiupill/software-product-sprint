@@ -14,18 +14,32 @@
 
 package com.google.sps.data;
 
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Sentiment;
+
 /** An item on a comments list. */
 public final class Comment {
 
   private final long id;
   private final String text;
   private final String timestamp;
-  private final double sentiment;
+  private final float sentiment;
 
-  public Comment(long id, String text, String timestamp, double sentiment) {
+  public Comment(long id, String text, String timestamp) {
     this.id = id;
     this.text = text;
     this.timestamp = timestamp;
-    this.sentiment = sentiment;
+    this.sentiment = addSentiment();
+  }
+
+  private float addSentiment() {
+    Document doc =
+       Document.newBuilder().setContent(this.text).setType(Document.Type.PLAIN_TEXT).build();
+    LanguageServiceClient languageService = LanguageServiceClient.create();
+    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
+    float score = sentiment.getScore();
+    languageService.close();
+    return score;
   }
 }

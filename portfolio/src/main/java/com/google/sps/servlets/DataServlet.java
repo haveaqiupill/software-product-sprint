@@ -22,9 +22,6 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
-import com.google.cloud.language.v1.Document;
-import com.google.cloud.language.v1.LanguageServiceClient;
-import com.google.cloud.language.v1.Sentiment;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -56,15 +53,10 @@ public class DataServlet extends HttpServlet {
       String text = (String) entity.getProperty("text");
       long timestamp = (long) entity.getProperty("timestamp");
 
-      //Round sentiment score to 2dp
-      double sentiment = (double) entity.getProperty("sentiment");
-      BigDecimal bd = BigDecimal.valueOf(sentiment);
-      bd = bd.setScale(2, RoundingMode.HALF_UP);
-
       SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss Z");
       Date date = new Date(timestamp);
 
-      Comment comment = new Comment(id, text, formatter.format(date), bd.doubleValue());
+      Comment comment = new Comment(id, text, formatter.format(date));
       comments.add(comment);
     }
 
@@ -80,17 +72,9 @@ public class DataServlet extends HttpServlet {
     String text = getParameter(request, "comment-input", "default");
     long timestamp = System.currentTimeMillis();
 
-    Document doc =
-        Document.newBuilder().setContent(text).setType(Document.Type.PLAIN_TEXT).build();
-    LanguageServiceClient languageService = LanguageServiceClient.create();
-    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
-    float score = sentiment.getScore();
-    languageService.close();
-
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("text", text.trim());
     commentEntity.setProperty("timestamp", timestamp);
-    commentEntity.setProperty("sentiment", score);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
