@@ -60,7 +60,7 @@ public class DataServlet extends HttpServlet {
       SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss Z");
       Date date = new Date(timestamp);
 
-      Comment comment = new Comment(id, text, formatter.format(date), bd.doubleValue());
+      Comment comment = new Comment(id, text, formatter.format(date), sentiment);
       comments.add(comment);
     }
 
