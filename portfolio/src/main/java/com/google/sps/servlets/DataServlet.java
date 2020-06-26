@@ -55,11 +55,7 @@ public class DataServlet extends HttpServlet {
       long id = entity.getKey().getId();
       String text = (String) entity.getProperty("text");
       long timestamp = (long) entity.getProperty("timestamp");
-
-      //Round sentiment score to 2dp
       double sentiment = (double) entity.getProperty("sentiment");
-      BigDecimal bd = BigDecimal.valueOf(sentiment);
-      bd = bd.setScale(2, RoundingMode.HALF_UP);
 
       SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss Z");
       Date date = new Date(timestamp);
