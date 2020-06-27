@@ -26,7 +26,7 @@ public final class GreeterTest {
   public void testGreeting() {
     Greeter greeter = new Greeter();
 
-    String greeting = greeter.greet("Ada");
+    String greeting = greeter.greet("   Ada   ");
 
     Assert.assertEquals("Hello Ada", greeting);
   }

@@ -81,6 +81,9 @@ named `optionsForNoAttendees()` you would execute:
 mvn test -Dtest=FindMeetingQueryTest#optionsForNoAttendees
 ```
 
+**Tip**: To view the print statements in your program you can pass the flag 
+`-Dsurefire.useFile=false`. 
+
 ## Pull Request
 
 To get feedback on your code, create a pull request and send it to your advisor
