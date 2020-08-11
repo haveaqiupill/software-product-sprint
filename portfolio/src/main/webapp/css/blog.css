@@ -35,6 +35,10 @@ b {
   object-fit: cover;
 }
 
+a:visited {
+  color:#666666;
+}
+
 /* Comment Card */
 
 .comment-card {
